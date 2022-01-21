@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script type="module" src="singleton/ConnectionDB.js" defer>
+    const ConnectionDB = window.ConnectionDB;
+</script>
+
+<script type="module" src="entity/Task.js" defer>
+    const Task = window.Task;
+</script>
+
+<style>
+    .d-flex {
+        display: flex;
+    }
+</style>
+
+<body>
+    <div class="d-flex">
+        <div id="new-task">
+            <div>
+                <label for="title-input">Title</label>
+                <input id="title-input" type="text">
+            </div>
+
+            <div>
+                <label for="description-input">Description</label>
+                <textarea id="description-input"></textarea>
+            </div>
+
+            <div>
+                <button onclick="CreateTask();">Add Task</button>
+            </div>
+        </div>
+
+        <div id="selected-task">
+            <div>
+                <input style="display: none;" id="selected-id-input" type="text">
+            </div>
+
+            <div>
+                <label for="selected-title-input">Title</label>
+                <input id="selected-title-input" type="text">
+            </div>
+
+            <div>
+                <label for="selected-description-input">Description</label>
+                <textarea id="selected-description-input"></textarea>
+            </div>
+
+            <div>
+                <select id="selected-status-input">
+                    <option value="0">In Progress</option>
+                    <option value="1">Done</option>
+                </select>
+
+            </div>
+
+            <div>
+                <button onclick="UpdateTask();">Update Task</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="list-tasks">
+        <table>
+            <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Created At</th>
+                <th>Updated At</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </table>
+    </div>
+
+
+</body>
+
+<script src="main.js">
+</script>
+
+</html>
